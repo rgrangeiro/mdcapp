@@ -32,9 +32,9 @@ export default {
 	input: 'src/main.js',
 	output: {
 		sourcemap: true,
-		format: 'iife',
-		name: 'app',
-		file: 'public/build/bundle.js'
+		//format: 'iife',
+		file: 'build/custom.js',
+		assetFileNames: 'assets/[name]-[hash][extname]'
 	},
 	plugins: [
 		svelte({
@@ -45,8 +45,7 @@ export default {
 		}),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
-		css({ output: 'bundle.css' }),
-
+		css({ output: 'build/custom.css' }),
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
 		// some cases you'll need additional configuration -
